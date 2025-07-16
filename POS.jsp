@@ -281,7 +281,7 @@
       <div class="copyright">
         <p>&copy; Ferreteria Don Lu. Todos los derechos reservados.</p>
       <div class="div-logout">
-        	<a href="https://www.google.com/"><i class="fa-solid fa-right-to-bracket icon-login"></i></a>
+        	<a href="login.jsp"><i class="fa-solid fa-right-to-bracket icon-login"></i></a>
       </div>
        <nav>
 	        <a href="index.html">Inicio</a> |

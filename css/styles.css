@@ -15,6 +15,9 @@ body {
 
 main {
   flex: 1;
+  max-width: 1500px;
+  margin: 2rem auto;
+  padding: 0 1rem;
 }
 
 /* === LOGIN === */
@@ -203,12 +206,6 @@ header {
 
 /* === Blocks === */
 
-main {
-  max-width: 1500px;
-  margin: 2rem auto;
-  padding: 0 1rem;
-}
-
 .block-container {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -256,6 +253,59 @@ main {
   padding: 1rem;
   font-size: 1.25rem;
   color: #4b5563;
+}
+
+/* === MEN-BIENVENIDA === */
+
+.main-notifications {
+  max-width: 600px;
+  margin: 40px auto;
+  padding: 20px;
+  background-color: white;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+h2 {
+  margin-bottom: 20px;
+  color: #333;
+  text-align: center;
+}
+
+.notification {
+  display: flex;
+  align-items: flex-start;
+  gap: 15px;
+  padding: 15px;
+  margin-bottom: 15px;
+  border-left: 5px solid #2196f3;
+  background-color: #f9f9f9;
+  border-radius: 8px;
+  transition: background 0.3s ease;
+}
+
+.notification:hover {
+  background-color: #eef6ff;
+}
+
+.notification-icon {
+  font-size: 24px;
+  color: #2196f3;
+  margin-top: 2px;
+}
+
+.notification-content {
+  flex: 1;
+}
+
+.notification-title {
+  font-weight: bold;
+  margin-bottom: 4px;
+}
+
+.notification-text {
+  color: #555;
+  font-size: 14px;
 }
 
 /* === FOOTER === */
