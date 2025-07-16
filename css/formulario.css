@@ -108,12 +108,20 @@ header {
 }
 
 .container {
-  max-width: 1200px;
+  max-width: 1500px;
   margin: 0 auto;
-  min-height: 100vh;
   padding: 30px;
   display: flex;
   flex-direction: column;
+}
+
+/* Content */
+.upd-content {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 30px;
+  padding: 30px;
+  flex: 1;
 }
 
 .main-navigation {
@@ -174,10 +182,11 @@ header {
 }
 .form-actions {
   margin-top: 20px;
+  margin-bottom: 20px;
   display: flex;
   justify-content: center;
 }
-.submit-btn {
+.del-btn {
   color: white;
   padding: 14px;
   background-color: #ff6b6b;
@@ -188,11 +197,33 @@ header {
   cursor: pointer;
   width: 50%;
 }
-.submit-btn:hover:not(:disabled) {
+
+.upd-btn {
+  background: linear-gradient(135deg, #4caf50 0%, #45a049 100%);
+  color: white;
+  border: none;
+  padding: 14px 20px;
+  border-radius: 8px;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: transform 0.2s, box-shadow 0.3s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 50%;
+}
+
+.upd-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(76, 175, 80, 0.3);
+}
+
+.del-btn:hover:not(:disabled) {
   transform: translateY(-2px);
   box-shadow: 0 6px 20px rgba(102, 126, 234, 0.3);
 }
-.submit-btn:disabled {
+.del-btn:disabled {
   background: #ccc;
   cursor: not-allowed;
 }

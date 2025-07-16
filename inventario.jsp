@@ -1,26 +1,16 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-pageEncoding="UTF-8"%> <% try {
-Class.forName("oracle.jdbc.driver.OracleDriver"); Connection conn =
-DriverManager.getConnection(url, usuario, clave); Statement stmt =
-conn.createStatement(); String sql = "SELECT inv_id, inv_producto,
-inv_cantidad_disp FROM Inventario ORDER BY inv_id"; ResultSet rs =
-stmt.executeQuery(sql); conn.close(); } catch (Exception e) { mensaje = "Error
-al registrar: "; } %>
-
+pageEncoding="UTF-8"%>
 <!DOCTYPE html>
-<html>
+<html lang="es">
   <head>
     <meta charset="UTF-8" />
-    <title>Inventario</title>
-    <link rel="stylesheet" href="css/styles.css" />
-    <link
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
-      rel="stylesheet"
-    />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Inventario de Productos</title>
+    <link rel="stylesheet" href="css/tabla.css" />
   </head>
   <body>
+    <!-- Seccion del header -->
     <header>
-      <!-- Seccion del header -->
       <div class="header-banner">
         <div class="header-logo-container">
           <div class="header-Logo">
@@ -50,35 +40,61 @@ al registrar: "; } %>
       </nav>
     </header>
 
-    <main>
-      <h2>Inventario</h2>
+    <div class="container">
+      <section class="table-section">
+        <div class="table-header">
+          <h2>Lista de Productos</h2>
+        </div>
 
-      <!-- Seccion del inventario -->
-      <section>
-        <table>
-          <tr>
-            <th>ID</th>
-            <th>ID Producto</th>
-            <th>Cantidad Disponible</th>
-          </tr>
-
-          <% while (rs.next()) { int id = rs.getInt("inv_id"); int producto =
-          rs.getInt("inv_producto"); int cantidad =
-          rs.getInt("inv_cantidad_disp"); %>
-          <tr>
-            <td><%= id %></td>
-            <td><%= producto %></td>
-            <td><%= cantidad %></td>
-          </tr>
-          <% } rs.close(); stmt.close(); conn.close(); } catch (Exception e) {
-          %>
-          <p style="color: red; text-align: center">
-            Error: <%= e.getMessage() %>
-          </p>
-          <% } %>
-        </table>
+        <div class="table-container">
+          <table class="modern-table">
+            <thead>
+              <tr>
+                <th>ID</th>
+                <th>ID Producto</th>
+                <th>Cantidad Disponible</th>
+              </tr>
+            </thead>
+            <tbody>
+              <% try { Class.forName("oracle.jdbc.driver.OracleDriver");
+              Connection conn =
+              DriverManager.getConnection("jdbc:oracle:thin:@localhost:1521/XEPDB1",
+              "system", "oracle"); Statement stmt = conn.createStatement();
+              ResultSet rs = stmt.executeQuery("SELECT * FROM Inventario");
+              while (rs.next()) { int id = rs.getInt("inv_id"); int producto =
+              rs.getInt("inv_producto"); int cantidad =
+              rs.getInt("inv_cantidad_disp"); // Definir clase CSS según
+              cantidad String cantidadClass; if (cantidad == 0) { cantidadClass
+              = "quantity-empty"; } else if (cantidad < 10) { cantidadClass =
+              "quantity-low"; } else if (cantidad < 50) { cantidadClass =
+              "quantity-medium"; } else { cantidadClass = "quantity-high"; } %>
+              <tr>
+                <td class="id-cell"><%= id %></td>
+                <td class="product-cell">
+                  <div class="product-info">
+                    <span class="product-name">Producto #<%= producto %></span>
+                    <span class="product-code">Código: <%= producto %></span>
+                  </div>
+                </td>
+                <td class="quantity-cell">
+                  <span class="quantity-badge <%= cantidadClass %>"
+                    ><%= cantidad %></span
+                  >
+                </td>
+              </tr>
+              <% } rs.close(); stmt.close(); conn.close(); } catch (Exception e)
+              { %>
+              <tr>
+                <td colspan="3" style="color: red; text-align: center">
+                  Error: <%= e.getMessage() %>
+                </td>
+              </tr>
+              <% } %>
+            </tbody>
+          </table>
+        </div>
       </section>
-    </main>
+    </div>
 
     <!-- Seccion del Footer -->
     <footer>
