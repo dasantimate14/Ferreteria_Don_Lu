@@ -1,10 +1,12 @@
 /* Estilos para agregar_producto.jsp */
 
 body {
-  font-family: Arial, sans-serif;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
+    Ubuntu, Cantarell, sans-serif;
   background: #f2f2f2;
   margin: 0;
   padding: 0;
+  min-height: 100vh;
 }
 
 
@@ -16,7 +18,6 @@ header {
 }
 
 .header-banner {
-  width: 100%;
   padding: 1rem 2rem;
   background: #ff5252;
   color: white;
@@ -95,6 +96,8 @@ header {
   background-color: #ffcdd2;
 }
 
+
+
 .title {
   text-align: center;
   margin: 2rem 0;
@@ -108,6 +111,11 @@ header {
   border-radius: 4px;
   text-decoration: none;
   margin-bottom: 1rem;
+}
+
+form{
+	font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
 }
 
 .form-container {
@@ -142,7 +150,7 @@ header {
 }
 
 .btn-primary {
-  background: #007bff;
+  background: linear-gradient(135deg, #4caf50 0%, #45a049 100%);
   color: #fff;
   padding: 0.75rem 1.5rem;
   border: none;
@@ -161,12 +169,6 @@ header {
   margin-bottom: 1rem;
 }
 
-@media (max-width: 600px) {
-  .form-container {
-    padding: 1rem;
-    margin: 1rem;
-  }
-}
 
 /* === FOOTER === */
 
@@ -201,3 +203,4 @@ footer nav a {
   flex-wrap: wrap;
   gap: 10px;
 }
+

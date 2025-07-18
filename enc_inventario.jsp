@@ -442,9 +442,6 @@
       <form action="historial_inventario.jsp" method="get">
         <button type="submit" class="btn-primary">Historial del Inventario</button>
       </form>
-      <form action="agregar_proveedor.jsp" method="get" style="display:inline; margin-left: 1rem;">
-    	<button type="submit" class="btn-secondary"><i class="fa-solid fa-user-plus"></i> Agregar Proveedor</button>
-  	  </form>
     </div>
       
     <!-- Seccion del Footer -->
@@ -455,10 +452,10 @@
           <a href="login.jsp"><i class="fa-solid fa-right-to-bracket icon-login"></i></a>
         </div>
         <nav>
-          <a href="main_cajero.jsp">Inicio</a> |
-          <a href="POS.jsp">Registrar venta</a> |
-          <a href="registro_cliente.jsp">Registrar clientes</a> |
-          <a href="Inventario.jsp">Inventario</a>
+	        <a href="main_enc_inven.jsp">Inicio</a> |
+	        <a href="enc_inventario.jsp">Inventario</a> |
+	        <a href="solicitud_reabastecimiento.jsp">Solicitar reabastecimiento</a> |
+	        <a href="agregar_proveedor.jsp">Agregar proveedor</a>
         </nav>
       </div>
     </footer>

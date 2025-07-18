@@ -5,11 +5,16 @@
 }
 
 body {
-  font-family: "Trebuchet MS", "Lucida Grande", "Lucida Sans Unicode",
-    "Lucida Sans", Tahoma, sans-serif;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
+    Ubuntu, Cantarell, sans-serif;
   background-color: #f8f9fa;
   color: #333;
   line-height: 1.6;
+}
+
+form{
+	font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
 }
 
 .pos-container {

@@ -45,7 +45,7 @@
                         response.sendRedirect("main_enc_inven.jsp");
                         break;
                     case "GERENTE":
-                        response.sendRedirect("gerente.jsp");
+                        response.sendRedirect("main_gerente.jsp");
                         break;
                     default:
                         response.sendRedirect("login.jsp?error=rol_desconocido");

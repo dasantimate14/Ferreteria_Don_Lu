@@ -154,13 +154,14 @@
       <a href="login.jsp"><i class="fa-solid fa-right-to-bracket icon-login"></i></a>
     </div>
   </div>
-  <nav class="main-nav">
-    <ul>
-                <li><a href="pos.jsp">Registrar venta</a></li>
-                <li><a href="registroCliente.jsp">Registrar clientes</a></li>
-                <li><a href="inventario.jsp">Inventario</a></li>
-    </ul>
-  </nav>
+  	  <nav class="main-nav">
+	    <ul>
+	      <li><a href="main_cajero.jsp">Inicio</a></li>
+	      <li><a href="pos.jsp">Registrar venta</a></li>
+	      <li><a href="registroCliente.jsp">Registrar clientes</a></li>
+	      <li><a href="inventario.jsp">Inventario</a> </li>
+	    </ul>
+	  </nav>
 </header>
 
 <div class="pos-container">
@@ -235,57 +236,57 @@
 
       
 
-<div class="sale-summary">
-    <div class="summary-content">
-        <div class="summary-details">
-            <div class="summary-item">
-                <span>Subtotal:</span>
-                <span>$<%= String.format("%.2f", subtotal) %></span>
-            </div>
-            <div class="summary-item">
-                <span>ITBMS (7%):</span>
-                <span>$<%= String.format("%.2f", itbms) %></span>
-            </div>
-            <div class="summary-item total">
-                <span>Total:</span>
-                <span>$<%= String.format("%.2f", total) %></span>
-            </div>
-        </div>
-        <div class="summary-actions">
-            <% if (!productos.isEmpty()) { %>
-                <form method="post" action="pos.jsp">
-                    <input type="hidden" name="action" value="pagar">
+		<div class="sale-summary">
+		    <div class="summary-content">
+		        <div class="summary-details">
+		            <div class="summary-item">
+		                <span>Subtotal:</span>
+		                <span>$<%= String.format("%.2f", subtotal) %></span>
+		            </div>
+		            <div class="summary-item">
+		                <span>ITBMS (7%):</span>
+		                <span>$<%= String.format("%.2f", itbms) %></span>
+		            </div>
+		            <div class="summary-item total">
+		                <span>Total:</span>
+		                <span>$<%= String.format("%.2f", total) %></span>
+		            </div>
+		        </div>
+		        <div class="summary-actions">
+		            <% if (!productos.isEmpty()) { %>
+		                <form method="post" action="pos.jsp">
+		                    <input type="hidden" name="action" value="pagar">
+		
+		                    <!-- MOVIDO AQUÍ -->
+		                    <div class="form-group">
+		                        <label for="clientId">ID del Cliente *</label>
+		                        <input type="number" id="clientId" name="clientId" min="1" required>
+		                    </div>
+		
+		                    <button type="submit" class="payment-btn">Procesar Pago</button>
+		                </form>
+		            <% } else { %>
+		                <button class="payment-btn" disabled>Procesar Pago</button>
+		            <% } %>
+		        </div>
+		    </div>
+		</div>
 
-                    <!-- MOVIDO AQUÍ -->
-                    <div class="form-group">
-                        <label for="clientId">ID del Cliente *</label>
-                        <input type="number" id="clientId" name="clientId" min="1" required>
-                    </div>
 
-                    <button type="submit" class="payment-btn">Procesar Pago</button>
-                </form>
-            <% } else { %>
-                <button class="payment-btn" disabled>Procesar Pago</button>
-            <% } %>
-        </div>
-    </div>
-</div>
-
-
-<footer>
-  <div class="copyright">
-    <p>&copy; Ferreteria Don Lu. Todos los derechos reservados.</p>
-    <div class="div-logout">
-      <a href="login.jsp"><i class="fa-solid fa-right-to-bracket icon-login"></i></a>
-    </div>
-    <nav>
-      <a href="index.html">Inicio</a> |
-      <a href="registro-profesores.jsp">Registro de Profesores</a> |
-      <a href="registro-estudiantes.jsp">Registro de Estudiantes</a> |
-      <a href="calendario.html">Calendario</a> |
-      <a href="soporte.html">Soporte</a>
-    </nav>
-  </div>
-</footer>
+	<!-- Seccion del Footer -->
+    <footer>
+      <div class="copyright">
+        <p>&copy; Ferreteria Don Lu. Todos los derechos reservados.</p>
+      <div class="div-logout">
+        	<a href="login.jsp"><i class="fa-solid fa-right-to-bracket icon-login"></i></a>
+      </div>
+        <nav>
+          <a href="main_cajero.jsp">Inicio</a> |
+          <a href="pos.jsp">Registrar venta</a> |
+          <a href="registroCliente.jsp">Registrar clientes</a> |
+          <a href="inventario.jsp">Inventario</a>
+        </nav>
+      </div>
+    </footer>
 </body>
 </html>

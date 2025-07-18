@@ -101,6 +101,7 @@ if ("POST".equalsIgnoreCase(request.getMethod())) {
         </div>
         <nav class="main-nav">
             <ul>
+            	<li><a href = "main_cajero.jsp">Inicio</a>
                 <li><a href="pos.jsp">Registrar venta</a></li>
                 <li><a href="registroCliente.jsp">Registrar clientes</a></li>
                 <li><a href="inventario.jsp">Inventario</a></li>
@@ -143,7 +144,7 @@ if ("POST".equalsIgnoreCase(request.getMethod())) {
                     <input type="text" id="cli_direccion" name="cli_direccion" class="form-input" maxlength="300" required />
                 </div>
                 <div class="form-actions">
-                    <button type="submit" class="submit-btn">Registrar</button>
+                    <button type="submit" class="upd-btn">Registrar</button>
                 </div>
             </form>
         </section>
@@ -271,8 +272,8 @@ if ("POST".equalsIgnoreCase(request.getMethod())) {
             <nav>
                 <a href="main_cajero.jsp">Inicio</a> |
                 <a href="pos.jsp">Registrar venta</a> |
-                <a href="registro_cliente.jsp">Registrar clientes</a> |
-                <a href="Inventario.jsp">Inventario</a>
+                <a href="registroCliente.jsp">Registrar clientes</a> |
+                <a href="inventario.jsp">Inventario</a>
             </nav>
         </div>
     </footer>

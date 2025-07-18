@@ -180,7 +180,7 @@ if ("POST".equalsIgnoreCase(request.getMethod())) {
                     <input type="text" id="emp_cedula" name="emp_cedula" class="form-input" pattern="^[0-9]{6,20}$" title="Solo números sin guiones" />
                 </div>
                 <div class="form-actions">
-                    <button type="submit" name="eliminar" class="del-btn">Eliminar</button>
+                    <button type="submit" name="eliminar" class="upd-btn">Eliminar</button>
                 </div>
             </form>
         </div>

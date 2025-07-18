@@ -8,7 +8,7 @@
     List<Integer> provIds     = new ArrayList<>();
     List<String>  provNames   = new ArrayList<>();
 %>
-<!DOCTYPE html>
+<!DOCTYPE html>  
 <html lang="es">
 <head>
   <meta charset="UTF-8">
@@ -235,12 +235,12 @@
     <div class="div-logout">
       <a href="login.jsp"><i class="fa-solid fa-right-to-bracket icon-login"></i></a>
     </div>
-    <nav>
-	        <a href="main_gerente.jsp">Inicio</a> |
-	        <a href="registro_empleado.jsp">Registrar empleado</a> |
-	        <a href="resumenVenta.jsp">Reporte de ventas</a> |
-	        <a href="auditoria.jsp">Reporte de auditoria</a> 
-    </nav>
+    	<nav>
+	        <a href="main_enc_inven.jsp">Inicio</a> |
+	        <a href="enc_inventario.jsp">Inventario</a> |
+	        <a href="solicitud_reabastecimiento.jsp">Solicitar reabastecimiento</a> |
+	        <a href="agregar_proveedor.jsp">Agregar proveedor</a>
+       </nav>
   </div>
 </footer>
 </body>

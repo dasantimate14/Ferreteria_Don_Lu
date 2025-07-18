@@ -8,12 +8,39 @@
   <title>Historial de Inventario</title>
   <link rel="stylesheet" href="css/tabla.css">
   <link rel="stylesheet" href="css/historial_inv.css">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
 </head>
 <body>
-  <header>
-    <h1>Historial de Inventario</h1>
-    <a href="enc_inventario.jsp" class="btn-secondary">← Volver al Inventario</a>
-  </header>
+
+<header>
+  <div class="header-banner">
+    <div class="header-logo-container">
+      <div class="header-Logo">
+        <img src="img/Logo.png" alt="logo" />
+      </div>
+      <h1 class="site-name">Ferretería Don Lu</h1>
+    </div>
+    <div class="group-icons">
+      <a href="https://www.google.com/"><i class="fa-solid fa-magnifying-glass icons"></i></a>
+      <i class="fa-brands fa-facebook icons"></i>
+      <i class="fa-brands fa-instagram icons"></i>
+      <i class="fa-brands fa-youtube icons"></i>
+      <a href="login.jsp"><i class="fa-solid fa-right-to-bracket icon-login"></i></a>
+    </div>
+  </div>
+  <nav class="main-nav">
+    <ul>
+          <li><a href="main_enc_inven.jsp">Inicio</a></li>
+          <li><a href="enc_inventario.jsp">Inventario</a></li>
+          <li><a href="solicitud_reabastecimiento.jsp">Solicitar reabastecimiento</a></li>
+          <li><a href="agregar_proveedor.jsp">Agregar proveedor</a></li>
+    </ul>
+  </nav>
+</header>
+	<div class="below-header">
+	    <h1>Historial de Inventario</h1>
+	    <a href="enc-inventario.jsp" class="btn-secondary">← Volver al Inventario</a>
+    </div>
 
 <%
   String dbURL  = "jdbc:oracle:thin:@localhost:1521:XE";
@@ -152,6 +179,19 @@
   }
 %>
 
+  <footer>
+    <div class="copyright">
+      <p>&copy; Ferretería Don Lu. Todos los derechos reservados.</p>
+      <div class="div-logout">
+        <a href="login.jsp"><i class="fa-solid fa-right-to-bracket icon-login"></i></a>
+      </div>
+      <nav>
+            <a href="main_enc_inven.jsp">Inicio</a> |
+	        <a href="enc_inventario.jsp">Inventario</a> |
+	        <a href="solicitud_reabastecimiento.jsp">Solicitar reabastecimiento</a> |
+	        <a href="agregar_proveedor.jsp">Agregar proveedor</a>
+      </nav>
+    </div>
+  </footer>
 </body>
 </html>
-

@@ -114,117 +114,132 @@
     }
     %>
     <!-- Tabla de Proveedores Actuales -->
-<style>
-.tabla-proveedores-section {
-    margin: 48px auto 18px auto;
-    max-width: 1100px;
-    background: #fff;
-    border-radius: 14px;
-    box-shadow: 0 2px 14px rgba(80,100,160,0.10);
-    padding: 25px 15px;
-}
-.tabla-proveedores-section h2 {
-    color: #2d4379;
-    text-align: center;
-    font-size: 1.5em;
-    margin-bottom: 20px;
-}
-.table-proveedores-container {
-    overflow-x: auto;
-}
-.tabla-proveedores {
-    width: 100%;
-    border-collapse: collapse;
-    font-family: 'Segoe UI', Arial, sans-serif;
-    background: #f9fafd;
-}
-.tabla-proveedores th, .tabla-proveedores td {
-    padding: 10px 14px;
-    text-align: center;
-}
-.tabla-proveedores th {
-    background: #165ea8;
-    color: #fff;
-    font-weight: 600;
-    font-size: 1.07em;
-}
-.tabla-proveedores tr {
-    border-bottom: 1px solid #e2e2ee;
-    transition: background 0.16s;
-}
-.tabla-proveedores tr:hover {
-    background: #e7f1fb;
-}
-.tabla-proveedores td {
-    color: #1b1b1b;
-}
-@media (max-width: 700px) {
-    .tabla-proveedores-section {
-        padding: 10px 2vw;
-    }
-    .tabla-proveedores th, .tabla-proveedores td {
-        font-size: 0.98em;
-        padding: 6px 2px;
-    }
-}
-</style>
-
-<section class="tabla-proveedores-section">
-    <h2>Proveedores Actuales</h2>
-    <div class="table-proveedores-container">
-        <table class="tabla-proveedores">
-            <thead>
-                <tr>
-                    <th>ID</th>
-                    <th>Nombre</th>
-                    <th>Persona de Contacto</th>
-                    <th>Email</th>
-                    <th>Teléfono</th>
-                    <th>Dirección</th>
-                </tr>
-            </thead>
-            <tbody>
-            <%
-            // Consulta y muestra proveedores
-            String dbURL  = "jdbc:oracle:thin:@localhost:1521:XE";
-            String dbUser = "owner_ferreteria";
-            String dbPass = "1234567";
-            Connection conn = null;
-            Statement stmt = null;
-            ResultSet rs = null;
-            try {
-                Class.forName("oracle.jdbc.OracleDriver");
-                conn = DriverManager.getConnection(dbURL, dbUser, dbPass);
-                stmt = conn.createStatement();
-                rs = stmt.executeQuery("SELECT prv_id, prv_nombre, prv_nombre_contacto, prv_email, prv_telefono, prv_direccion FROM Proveedor ORDER BY prv_id");
-                while (rs.next()) {
-            %>
-                <tr>
-                    <td><%= rs.getInt("prv_id") %></td>
-                    <td><%= rs.getString("prv_nombre") %></td>
-                    <td><%= rs.getString("prv_nombre_contacto") %></td>
-                    <td><%= rs.getString("prv_email") %></td>
-                    <td><%= rs.getString("prv_telefono") %></td>
-                    <td><%= rs.getString("prv_direccion") %></td>
-                </tr>
-            <%
-                }
-            } catch (Exception e) {
-            %>
-                <tr>
-                    <td colspan="6" style="color:red;">Error al cargar proveedores: <%= e.getMessage() %></td>
-                </tr>
-            <%
-            } finally {
-                try { if (rs != null) rs.close(); } catch(Exception e){}
-                try { if (stmt != null) stmt.close(); } catch(Exception e){}
-                try { if (conn != null) conn.close(); } catch(Exception e){}
-            }
-            %>
-            </tbody>
-        </table>
-    </div>
-</section>
+	<style>
+	.tabla-proveedores-section {
+	    margin: 48px auto 18px auto;
+	    max-width: 1100px;
+	    background: #fff;
+	    border-radius: 14px;
+	    box-shadow: 0 2px 14px rgba(80,100,160,0.10);
+	    padding: 25px 15px;
+	}
+	.tabla-proveedores-section h2 {
+	    color: #2d4379;
+	    text-align: center;
+	    font-size: 1.5em;
+	    margin-bottom: 20px;
+	}
+	.table-proveedores-container {
+	    overflow-x: auto;
+	}
+	.tabla-proveedores {
+	    width: 100%;
+	    border-collapse: collapse;
+	    font-family: 'Segoe UI', Arial, sans-serif;
+	    background: #f9fafd;
+	}
+	.tabla-proveedores th, .tabla-proveedores td {
+	    padding: 10px 14px;
+	    text-align: center;
+	}
+	.tabla-proveedores th {
+	    background: #165ea8;
+	    color: #fff;
+	    font-weight: 600;
+	    font-size: 1.07em;
+	}
+	.tabla-proveedores tr {
+	    border-bottom: 1px solid #e2e2ee;
+	    transition: background 0.16s;
+	}
+	.tabla-proveedores tr:hover {
+	    background: #e7f1fb;
+	}
+	.tabla-proveedores td {
+	    color: #1b1b1b;
+	}
+	@media (max-width: 700px) {
+	    .tabla-proveedores-section {
+	        padding: 10px 2vw;
+	    }
+	    .tabla-proveedores th, .tabla-proveedores td {
+	        font-size: 0.98em;
+	        padding: 6px 2px;
+	    }
+	}
+	</style>
+	
+	<section class="tabla-proveedores-section">
+	    <h2>Proveedores Actuales</h2>
+	    <div class="table-proveedores-container">
+	        <table class="tabla-proveedores">
+	            <thead>
+	                <tr>
+	                    <th>ID</th>
+	                    <th>Nombre</th>
+	                    <th>Persona de Contacto</th>
+	                    <th>Email</th>
+	                    <th>Teléfono</th>
+	                    <th>Dirección</th>
+	                </tr>
+	            </thead>
+	            <tbody>
+	            <%
+	            // Consulta y muestra proveedores
+	            String dbURL  = "jdbc:oracle:thin:@localhost:1521:XE";
+	            String dbUser = "owner_ferreteria";
+	            String dbPass = "1234567";
+	            Connection conn = null;
+	            Statement stmt = null;
+	            ResultSet rs = null;
+	            try {
+	                Class.forName("oracle.jdbc.OracleDriver");
+	                conn = DriverManager.getConnection(dbURL, dbUser, dbPass);
+	                stmt = conn.createStatement();
+	                rs = stmt.executeQuery("SELECT prv_id, prv_nombre, prv_nombre_contacto, prv_email, prv_telefono, prv_direccion FROM Proveedor ORDER BY prv_id");
+	                while (rs.next()) {
+	            %>
+	                <tr>
+	                    <td><%= rs.getInt("prv_id") %></td>
+	                    <td><%= rs.getString("prv_nombre") %></td>
+	                    <td><%= rs.getString("prv_nombre_contacto") %></td>
+	                    <td><%= rs.getString("prv_email") %></td>
+	                    <td><%= rs.getString("prv_telefono") %></td>
+	                    <td><%= rs.getString("prv_direccion") %></td>
+	                </tr>
+	            <%
+	                }
+	            } catch (Exception e) {
+	            %>
+	                <tr>
+	                    <td colspan="6" style="color:red;">Error al cargar proveedores: <%= e.getMessage() %></td>
+	                </tr>
+	            <%
+	            } finally {
+	                try { if (rs != null) rs.close(); } catch(Exception e){}
+	                try { if (stmt != null) stmt.close(); } catch(Exception e){}
+	                try { if (conn != null) conn.close(); } catch(Exception e){}
+	            }
+	            %>
+	            </tbody>
+	        </table>
+	    </div>
+	</section>
+    	<!-- Seccion del Footer -->
+    <footer>
+      <div class="copyright">
+        <p>&copy; Ferreteria Don Lu. Todos los derechos reservados.</p>
+      <div class="div-logout">
+        	<a href="login.jsp"><i class="fa-solid fa-right-to-bracket icon-login"></i></a>
+      </div>
+       <nav>
+	        <a href="main_enc_inven.jsp">Inicio</a> |
+	        <a href="enc_inventario.jsp">Inventario</a> |
+	        <a href="solicitud_reabastecimiento.jsp">Solicitar reabastecimiento</a> |
+	        <a href="agregar_proveedor.jsp">Agregar proveedor</a>
+       </nav>
+      </div>
+    </footer>
 </body>
 </html>
 

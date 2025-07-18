@@ -29,9 +29,9 @@
 	  <nav class="main-nav">
 	    <ul>
 	      <li><a href="main_cajero.jsp">Inicio</a></li>
-	      <li><a href="POS.jsp">Registrar venta</a></li>
-	      <li><a href="registro_cliente.jsp">Registrar clientes</a></li>
-	      <li><a href="Inventario.jsp">Inventario</a> </li>
+	      <li><a href="pos.jsp">Registrar venta</a></li>
+	      <li><a href="registroCliente.jsp">Registrar clientes</a></li>
+	      <li><a href="inventario.jsp">Inventario</a> </li>
 	    </ul>
 	  </nav>
 	</header>
@@ -72,12 +72,12 @@
       <div class="div-logout">
         	<a href="login.jsp"><i class="fa-solid fa-right-to-bracket icon-login"></i></a>
       </div>
-       <nav>
-	        <a href="main_cajero.jsp">Inicio</a> |
-	        <a href="POS.jsp">Registrar venta</a> |
-	        <a href="registro_cliente.jsp">Registrar clientes</a> |
-	        <a href="Inventario.jsp">Inventario</a> 
-       </nav>
+        <nav>
+          <a href="main_cajero.jsp">Inicio</a> |
+          <a href="pos.jsp">Registrar venta</a> |
+          <a href="registroCliente.jsp">Registrar clientes</a> |
+          <a href="inventario.jsp">Inventario</a>
+        </nav>
       </div>
     </footer>
 </body>

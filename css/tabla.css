@@ -111,6 +111,46 @@ header {
   background-color: #ffcdd2;
 }
 
+/* CAMBIO: Estilos para el selector de tablas */
+.table-selector {
+  margin-top: 20px;
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  justify-content: center;
+}
+
+.table-selector label {
+  font-size: 16px;
+  font-weight: 600;
+  color: black;
+}
+
+.table-selector select {
+  padding: 10px 15px;
+  border: 2px solid black;
+  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.1);
+  color: black;
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  backdrop-filter: blur(10px);
+}
+
+.table-selector select:focus {
+  outline: none;
+  border-color: black;
+  background: rgba(255, 255, 255, 0.2);
+}
+
+.table-selector select option {
+  background: #2c3e50;
+  color: white;
+  padding: 10px;
+}
+
 /* Sección de la tabla */
 .table-section {
   background: white;
@@ -272,3 +312,4 @@ footer nav a {
   flex-wrap: wrap;
   gap: 10px;
 }
+

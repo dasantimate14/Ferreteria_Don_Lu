@@ -243,6 +243,21 @@ if (mensaje != null) {
         <%= mensaje %>
     </div>
 <% } %>
+    	<!-- Seccion del Footer -->
+    <footer>
+      <div class="copyright">
+        <p>&copy; Ferreteria Don Lu. Todos los derechos reservados.</p>
+      <div class="div-logout">
+        	<a href="login.jsp"><i class="fa-solid fa-right-to-bracket icon-login"></i></a>
+      </div>
+       <nav>
+	        <a href="main_enc_inven.jsp">Inicio</a> |
+	        <a href="enc_inventario.jsp">Inventario</a> |
+	        <a href="solicitud_reabastecimiento.jsp">Solicitar reabastecimiento</a> |
+	        <a href="agregar_proveedor.jsp">Agregar proveedor</a>
+       </nav>
+      </div>
+    </footer>
 </body>
 </html>
 
