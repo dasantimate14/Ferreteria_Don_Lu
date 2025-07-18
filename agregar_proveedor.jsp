@@ -38,31 +38,63 @@
       </nav>
     </header>
     
-    <h2 class="text-center">Registrar Nuevo Proveedor</h2>
+<div class="form-section">
+  <h2>Registrar Nuevo Proveedor</h2>
 
-    <form method="post" autocomplete="off">
-        <label>Nombre del Proveedor:</label>
-        <input type="text" name="nombre" maxlength="100" required>
-        
-        <label>Nombre de Contacto:</label>
-        <input type="text" name="nombre_contacto" maxlength="100">
+  <form method="post" autocomplete="off">
+    <div class="form-group">
+      <label for="prov-nombre">Nombre del Proveedor:</label>
+      <input id="prov-nombre" class="form-input"
+             type="text" name="nombre"
+             maxlength="100" required>
+    </div>
 
-        <label>Email:
-          <span class="ejemplo">(Ejemplo: nombre@email.com)</span>
-        </label>
-        <input type="email" name="email" maxlength="150" required pattern="^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\\.[a-zA-Z0-9-.]+$">
+    <div class="form-group">
+      <label for="prov-contacto">Nombre de Contacto:</label>
+      <input id="prov-contacto" class="form-input"
+             type="text" name="nombre_contacto"
+             maxlength="100">
+    </div>
 
-        <label>Teléfono:
-          <span class="ejemplo">(Formato internacional, ejemplo: +1234567891)</span>
-        </label>
-        <input type="text" name="telefono" maxlength="20" pattern="\+[0-9]{11,15}" title="Debe tener el formato +12331562244" required>
+    <div class="form-group">
+      <label for="prov-email">
+        Email:
+        <span class="ejemplo">(Ejemplo: nombre@email.com)</span>
+      </label>
+      <input id="prov-email" class="form-input"
+             type="email" name="email"
+             maxlength="150" required
+             pattern="^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$">
+    </div>
 
-        <label>Dirección:</label>
-        <textarea name="direccion" maxlength="300"></textarea>
+    <div class="form-group">
+      <label for="prov-telefono">
+        Teléfono:
+        <span class="ejemplo">(Formato internacional, ejemplo: +1234567891)</span>
+      </label>
+      <input id="prov-telefono" class="form-input"
+             type="text" name="telefono"
+             maxlength="20"
+             pattern="\+[0-9]{11,15}"
+             title="Debe tener el formato +12331562244"
+             required>
+    </div>
 
-        <br>
-        <button type="submit" class="btn-primary positive-btn">Registrar Proveedor</button>
-    </form>
+    <div class="form-group">
+      <label for="prov-direccion">Dirección:</label>
+      <textarea id="prov-direccion" class="form-input"
+                name="direccion" maxlength="300"
+                rows="3"></textarea>
+    </div>
+
+    <div class="form-actions">
+      <button type="submit" class="btn btn-success">
+        Registrar Proveedor
+      </button>
+    </div>
+  </form>
+</div>
+
 
     <%
     String mensaje = null;

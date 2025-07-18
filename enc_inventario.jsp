@@ -11,6 +11,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Inventario de Productos</title>
     <link rel="stylesheet" href="css/tabla.css" />
+    <link rel="stylesheet" href="css/styles.css" />
     <link rel="stylesheet" href="css/enc_inventario.css" />
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
   </head>
@@ -162,7 +163,7 @@
                                 <span class="status-badge <%= estadoClass %>"><%= estadoText %></span>
                             </td>
                             <td>
-                                <a href="solicitud_reabastecimiento.jsp?producto=<%= productoId %>" class="btn-action">
+                                <a href="solicitud_reabastecimiento.jsp?producto=<%= productoId %>" class="btn-action positive-btn">
                                     <i class="fa-solid fa-cart-plus"></i> Pedir
                                 </a>
                             </td>
@@ -224,7 +225,7 @@
 		              <input type="hidden"
 		                     name="cantidad_recibida"
 		                     value="<%= cantidadPend %>" />
-		              <button type="submit" class="btn-action">
+		              <button type="submit" class="btn-action positive-btn">
 		                <i class="fa-solid fa-truck"></i> Recibir (<%= cantidadPend %>)
 		              </button>
 		            </form>
@@ -350,7 +351,7 @@
                     <a href="agregar_producto.jsp" class="btn-primary positive-btn">
                         <i class="fa-solid fa-plus"></i> Agregar Producto
                     </a>
-                    <a href="solicitud_reabastecimiento.jsp" class="btn-secondary">
+                    <a href="solicitud_reabastecimiento.jsp" class="btn-primary positive-btn">
                         <i class="fa-solid fa-download"></i> Solicitar Reabastecimiento
                     </a>
                 </div>

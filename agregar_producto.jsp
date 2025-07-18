@@ -60,7 +60,9 @@
 
 	<div class="title">
 	    <h1>Agregar Nuevo Producto</h1>
-    	<a href="main_enc_inven.jsp" class="btn-secondary">← Volver al Inventario</a>
+    	<a href="enc_inventario.jsp" class="btn-secondary">
+    		<i class="fa-solid fa-arrow-left"></i> Volver al Inventario
+  		</a>
 	</div>
   <div class="form-container">
 
@@ -189,44 +191,70 @@
                  ? "success-msg" : "error-msg" %>">
       <%= msg %>
     </p>
-    <form method="post" action="agregar_producto.jsp">
-      <label>Nombre:</label>
-      <input type="text" name="nombre" required>
+    <div class='form-section'>
+     <form method="post" action="agregar_producto.jsp">
+      
+      <div class="form-group">
+        <label for="nombre">Nombre:</label>
+        <input id="nombre" class="form-input" type="text" name="nombre" required>
+      </div>
 
-      <label>Descripción:</label>
-      <textarea name="descripcion" rows="3" required></textarea>
+      <div class="form-group">
+        <label for="descripcion">Descripción:</label>
+        <textarea id="descripcion" class="form-input" name="descripcion" rows="3" required></textarea>
+      </div>
 
-      <label>Marca:</label>
-      <input type="text" name="marca" required>
+      <div class="form-group">
+        <label for="marca">Marca:</label>
+        <input id="marca" class="form-input" type="text" name="marca" required>
+      </div>
 
-      <label>Precio Unitario:</label>
-      <input type="number" name="precio" step="0.01" min="0.01" required>
+      <div class="form-group">
+        <label for="precio">Precio Unitario:</label>
+        <input id="precio" class="form-input" type="number"
+               name="precio" step="0.01" min="0.01" required>
+      </div>
 
-      <label>Categoría:</label>
-      <select id="categoria_select" name="categoria_select"
-              onchange="toggleNewCategory(this.value)" required>
-        <option value="">--Selecciona--</option>
-        <option value="new">Nueva categoría</option>
-        <% for (int i = 0; i < catIds.size(); i++) { %>
-          <option value="<%= catIds.get(i) %>">
-            <%= catNames.get(i) %>
-          </option>
-        <% } %>
-      </select>
-      <input type="text" id="categoria_nueva" name="categoria_nueva"
-             placeholder="Escribe nueva categoría">
+      <div class="form-group">
+        <label for="categoria_select">Categoría:</label>
+        <select id="categoria_select" class="form-input"
+                name="categoria_select"
+                onchange="toggleNewCategory(this.value)" required>
+          <option value="">--Selecciona--</option>
+          <option value="new">Nueva categoría</option>
+          <% for (int i = 0; i < catIds.size(); i++) { %>
+            <option value="<%= catIds.get(i) %>">
+              <%= catNames.get(i) %>
+            </option>
+          <% } %>
+        </select>
+      </div>
 
-      <label>Proveedores (Ctrl+click para varios):</label>
-      <select name="proveedor_ids" multiple size="5" required>
-        <% for (int i = 0; i < provIds.size(); i++) { %>
-          <option value="<%= provIds.get(i) %>">
-            <%= provNames.get(i) %>
-          </option>
-        <% } %>
-      </select>
+      <div class="form-group" id="categoria_nueva" style="display:none;">
+        <label for="categoria_nueva_input">Escribe nueva categoría:</label>
+        <input id="categoria_nueva_input" class="form-input"
+               type="text" name="categoria_nueva">
+      </div>
 
-      <button type="submit" class="btn-primary positive-btn">Guardar Producto</button>
+      <div class="form-group">
+        <label for="proveedor_ids">Proveedores:</label>
+        <select id="proveedor_ids" class="form-input"
+                name="proveedor_ids" multiple size="5" required>
+          <% for (int i = 0; i < provIds.size(); i++) { %>
+            <option value="<%= provIds.get(i) %>">
+              <%= provNames.get(i) %>
+            </option>
+          <% } %>
+        </select>
+      </div>
+
+      <div class="form-actions">
+        <button type="submit" class="btn btn-success">
+          <i class="fa-solid fa-save"></i> Guardar Producto
+        </button>
+      </div>
     </form>
+    </div>
   </div>
   
   <footer>

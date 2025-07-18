@@ -4,7 +4,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Dashboard de Gerente</title>
+<title>Dashboard de Encargado Inventario</title>
 <link rel="stylesheet" href="css/styles.css" />
 <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
 </head>

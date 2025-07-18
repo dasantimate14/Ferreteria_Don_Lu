@@ -39,7 +39,7 @@
 
                 switch (puesto) {
                     case "CAJERO":
-                        response.sendRedirect("pos.jsp");
+                        response.sendRedirect("main_cajero.jsp");
                         break;
                     case "INVENTARIO":
                         response.sendRedirect("main_enc_inven.jsp");

@@ -180,10 +180,10 @@ header {
 
 .add-btn {
   background: linear-gradient(135deg, #4caf50 0%, #45a049 100%);
-  color: #fff;
+  color: white;
   border: none;
-  padding: 0.75rem 1.5rem;
-  border-radius: 6px;
+  padding: 14px 20px;
+  border-radius: 8px;
   font-size: 16px;
   font-weight: 600;
   cursor: pointer;
@@ -207,10 +207,10 @@ header {
 /* Reutilizable para botones positivos */
 .positive-btn {
   background: linear-gradient(135deg, #4caf50 0%, #45a049 100%);
-  color: #fff;
+  color: white;
   border: none;
-  padding: 0.75rem 1.5rem;
-  border-radius: 4px;
+  padding: 14px 20px;
+  border-radius: 8px;
   font-size: 16px;
   font-weight: 600;
   cursor: pointer;

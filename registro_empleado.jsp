@@ -180,7 +180,7 @@ if ("POST".equalsIgnoreCase(request.getMethod())) {
                     <input type="text" id="emp_cedula" name="emp_cedula" class="form-input" pattern="^[0-9]{6,20}$" title="Solo números sin guiones" />
                 </div>
                 <div class="form-actions">
-                    <button type="submit" name="eliminar" class="upd-btn">Eliminar</button>
+                    <button type="submit" name="eliminar" class="btn btn-danger">Eliminar</button>
                 </div>
             </form>
         </div>
@@ -202,7 +202,7 @@ if ("POST".equalsIgnoreCase(request.getMethod())) {
                     <input type="text" id="emp_puesto" name="emp_puesto" class="form-input" required />
                 </div>
                 <div class="form-actions">
-                    <button type="submit" name="actualizar" class="upd-btn">Actualizar</button>
+                    <button type="submit" name="actualizar" class="btn btn-success">Actualizar</button>
                 </div>
             </form>
         </div>
@@ -248,7 +248,7 @@ if ("POST".equalsIgnoreCase(request.getMethod())) {
                     <input type="password" id="emp_password" name="emp_password" class="form-input" required />
                 </div>
                 <div class="form-actions">
-                    <button type="submit" name="registrar" class="upd-btn positive-btn">Registrar</button>
+                    <button type="submit" name="registrar" class="btn btn-success">Registrar</button>
                 </div>
             </form>
         </section>

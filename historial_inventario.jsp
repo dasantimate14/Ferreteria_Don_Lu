@@ -39,7 +39,7 @@
 </header>
 	<div class="below-header">
 	    <h1>Historial de Inventario</h1>
-	    <a href="enc-inventario.jsp" class="btn-secondary">← Volver al Inventario</a>
+	    <a href="enc_inventario.jsp" class="btn-secondary">← Volver al Inventario</a>
     </div>
 
 <%
