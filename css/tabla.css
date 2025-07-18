@@ -209,6 +209,22 @@ header {
   border-bottom: 3px solid #1a252f;
 }
 
+.modern-table th:first-child {
+  border-top-left-radius: 8px;
+}
+
+.modern-table th:last-child {
+  border-top-right-radius: 8px;
+}
+
+.modern-table tbody tr:last-child td:first-child {
+  border-bottom-left-radius: 8px;
+}
+
+.modern-table tbody tr:last-child td:last-child {
+  border-bottom-right-radius: 8px;
+}
+
 .modern-table tbody tr {
   transition: all 0.3s ease;
   border-bottom: 1px solid #e1e5e9;
@@ -217,7 +233,7 @@ header {
   background-color: #f8f9fa;
 }
 .modern-table tbody tr:hover {
-  background-color: #eef2f7;
+  background-color: #ffeef0;
 }
 
 .modern-table td {
@@ -364,6 +380,26 @@ footer nav a {
   font-weight: 600;
   font-size: 1.06em;
 }
+
+.tabla-clientes th:first-child,
+.tabla-proveedores th:first-child {
+  border-top-left-radius: 8px;
+}
+
+.tabla-clientes th:last-child,
+.tabla-proveedores th:last-child {
+  border-top-right-radius: 8px;
+}
+
+.tabla-clientes tr:last-child td:first-child,
+.tabla-proveedores tr:last-child td:first-child {
+  border-bottom-left-radius: 8px;
+}
+
+.tabla-clientes tr:last-child td:last-child,
+.tabla-proveedores tr:last-child td:last-child {
+  border-bottom-right-radius: 8px;
+}
 .tabla-clientes tr,
 .tabla-proveedores tr {
   border-bottom: 1px solid #e3e3f3;
@@ -395,9 +431,9 @@ footer nav a {
 .positive-btn {
   background: linear-gradient(135deg, #4caf50 0%, #45a049 100%);
   color: #fff;
-  padding: 0.6rem 1.2rem;
+  padding: 0.75rem 1.5rem;
   border: none;
-  border-radius: 6px;
+  border-radius: 4px;
   cursor: pointer;
   transition: transform 0.2s, box-shadow 0.3s;
 }
