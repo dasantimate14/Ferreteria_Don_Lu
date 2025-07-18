@@ -269,11 +269,12 @@
 		                <button class="payment-btn" disabled>Procesar Pago</button>
 		            <% } %>
 		        </div>
-		    </div>
-		</div>
+                    </div>
+                </div>
+            </div> <!-- cierre pos-content -->
+        </div> <!-- cierre pos-container -->
 
-
-	<!-- Seccion del Footer -->
+        <!-- Seccion del Footer -->
     <footer>
       <div class="copyright">
         <p>&copy; Ferreteria Don Lu. Todos los derechos reservados.</p>

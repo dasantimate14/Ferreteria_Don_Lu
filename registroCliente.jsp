@@ -118,7 +118,7 @@ if ("POST".equalsIgnoreCase(request.getMethod())) {
                     <input type="text" id="cli_direccion" name="cli_direccion" class="form-input" maxlength="300" required />
                 </div>
                 <div class="form-actions">
-                    <button type="submit" class="upd-btn">Registrar</button>
+                    <button type="submit" class="upd-btn positive-btn">Registrar</button>
                 </div>
             </form>
         </section>
