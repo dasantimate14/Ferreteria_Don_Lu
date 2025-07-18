@@ -6,6 +6,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Inventario de Productos</title>
+    <link rel="stylesheet" href="css/styles.css" />
     <link rel="stylesheet" href="css/tabla.css" />
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
   </head>
@@ -101,7 +102,7 @@
                 } catch (Exception e) {
               %>
               <tr>
-                <td colspan="4" style="color: red; text-align: center">
+                <td colspan="4" class="text-red text-center">
                   Error: <%= e.getMessage() %>
                 </td>
               </tr>

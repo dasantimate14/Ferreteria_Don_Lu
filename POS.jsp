@@ -25,7 +25,7 @@
             }
         }
     } catch (Exception e) {
-        out.println("<p style='color:red;'>Error al cargar inventario: " + e.getMessage() + "</p>");
+        out.println("<p class='text-red'>Error al cargar inventario: " + e.getMessage() + "</p>");
     }
 
     List<Map<String, Object>> productos = (List<Map<String, Object>>) session.getAttribute("productos");
@@ -59,7 +59,7 @@
                 productos.add(producto);
             }
         } catch (Exception e) {
-            out.println("<p style='color:red;'>Error al agregar producto: " + e.getMessage() + "</p>");
+            out.println("<p class='text-red'>Error al agregar producto: " + e.getMessage() + "</p>");
         }
     } else if ("delete".equals(action)) {
         try {
@@ -84,11 +84,11 @@
         Integer empId = (Integer) session.getAttribute("emp_id");
 
         if (empId == null) {
-            out.println("<p style='color:red;'>⚠️ No se encontró el ID del empleado en la sesión. Asegúrate de haber iniciado sesión correctamente.</p>");
+            out.println("<p class='text-red'>⚠️ No se encontró el ID del empleado en la sesión. Asegúrate de haber iniciado sesión correctamente.</p>");
         } else if (cliIdStr == null || cliIdStr.isEmpty()) {
-            out.println("<p style='color:red;'>⚠️ El ID del cliente es obligatorio.</p>");
+            out.println("<p class='text-red'>⚠️ El ID del cliente es obligatorio.</p>");
         } else if (productos.isEmpty()) {
-            out.println("<p style='color:red;'>⚠️ No hay productos en la venta.</p>");
+            out.println("<p class='text-red'>⚠️ No hay productos en la venta.</p>");
         } else {
             try {
                 long cliId = Long.parseLong(cliIdStr);
@@ -123,7 +123,7 @@
                     return;
                 }
             } catch (Exception e) {
-                out.println("<p style='color:red;'>❌ Error al procesar venta: " + e.getMessage() + "</p>");
+                out.println("<p class='text-red'>❌ Error al procesar venta: " + e.getMessage() + "</p>");
             }
         }
     }
@@ -135,6 +135,7 @@
     <title>Registrar venta</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/styles.css">
     <link rel="stylesheet" href="css/pos.css">
 </head>
 <body>
@@ -195,7 +196,7 @@
             <div class="section-header">
                 <h2>Productos en Venta (<%= productos.size() %>)</h2>
                 <% if (!productos.isEmpty()) { %>
-                    <form method="post" action="pos.jsp" style="display: inline;">
+                    <form method="post" action="pos.jsp" class="d-inline">
                         <input type="hidden" name="action" value="clear">
                         <button type="submit" class="clear-btn">Limpiar Todo</button>
                     </form>
@@ -222,7 +223,7 @@
                                 $<%= String.format("%.2f", (Double)producto.get("precio") * (Integer)producto.get("cantidad")) %>
                             </div>
                             <div class="product-actions">
-                                <form method="post" action="pos.jsp" style="display: inline;">
+                                <form method="post" action="pos.jsp" class="d-inline">
                                     <input type="hidden" name="action" value="delete">
                                     <input type="hidden" name="id" value="<%= producto.get("id") %>">
                                     <button type="submit" class="delete-btn">Eliminar</button>

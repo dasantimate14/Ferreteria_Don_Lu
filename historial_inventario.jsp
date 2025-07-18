@@ -6,6 +6,7 @@
 <head>
   <meta charset="UTF-8">
   <title>Historial de Inventario</title>
+  <link rel="stylesheet" href="css/styles.css">
   <link rel="stylesheet" href="css/tabla.css">
   <link rel="stylesheet" href="css/historial_inv.css">
   <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
@@ -173,7 +174,7 @@
   } catch (Exception e) {
 %>
   <section class="error-section">
-    <p style="color:red;">Error al generar historial: <%= e.getMessage() %></p>
+    <p class="text-red">Error al generar historial: <%= e.getMessage() %></p>
   </section>
 <%
   }
