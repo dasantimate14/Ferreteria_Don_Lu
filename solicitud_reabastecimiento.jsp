@@ -119,9 +119,9 @@
             <input type="number" name="cantidad" required>
         </div>
     </div>
-    <button type="button" onclick="agregarDetalle()">Agregar Otro Producto</button>
+    <button type="button" class="positive-btn" onclick="agregarDetalle()">Agregar Otro Producto</button>
     <br><br>
-    <input type="submit" value="Registrar Pedido">
+    <input type="submit" class="positive-btn" value="Registrar Pedido">
 </form>
 <script>
 const proveedoresPorProducto = <%=proveedoresPorProductoJS.toString()%>;

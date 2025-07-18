@@ -347,7 +347,7 @@
             <div class="section-header">
                 <h2><i class="fa-solid fa-warehouse"></i> Inventario Completo</h2>
                 <div class="section-actions">
-                    <a href="agregar_producto.jsp" class="btn-primary">
+                    <a href="agregar_producto.jsp" class="btn-primary positive-btn">
                         <i class="fa-solid fa-plus"></i> Agregar Producto
                     </a>
                     <a href="solicitud_reabastecimiento.jsp" class="btn-secondary">
@@ -440,7 +440,7 @@
        <!-- Botón para ver el Historial del Inventario y Agregar Proveedor-->
     <div class="centered-section">
       <form action="historial_inventario.jsp" method="get">
-        <button type="submit" class="btn-primary">Historial del Inventario</button>
+        <button type="submit" class="btn-primary positive-btn">Historial del Inventario</button>
       </form>
     </div>
       

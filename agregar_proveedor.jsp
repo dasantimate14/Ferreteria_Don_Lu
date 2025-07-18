@@ -61,7 +61,7 @@
         <textarea name="direccion" maxlength="300"></textarea>
 
         <br>
-        <button type="submit" class="btn-primary">Registrar Proveedor</button>
+        <button type="submit" class="btn-primary positive-btn">Registrar Proveedor</button>
     </form>
 
     <%

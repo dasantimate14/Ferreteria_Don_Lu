@@ -225,7 +225,7 @@
         <% } %>
       </select>
 
-      <button type="submit" class="btn-primary">Guardar Producto</button>
+      <button type="submit" class="btn-primary positive-btn">Guardar Producto</button>
     </form>
   </div>
   

@@ -248,7 +248,7 @@ if ("POST".equalsIgnoreCase(request.getMethod())) {
                     <input type="password" id="emp_password" name="emp_password" class="form-input" required />
                 </div>
                 <div class="form-actions">
-                    <button type="submit" name="registrar" class="upd-btn">Registrar</button>
+                    <button type="submit" name="registrar" class="upd-btn positive-btn">Registrar</button>
                 </div>
             </form>
         </section>
