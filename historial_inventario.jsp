@@ -173,7 +173,7 @@
   } catch (Exception e) {
 %>
   <section class="error-section">
-    <p style="color:red;">Error al generar historial: <%= e.getMessage() %></p>
+    <p class="text-red">Error al generar historial: <%= e.getMessage() %></p>
   </section>
 <%
   }

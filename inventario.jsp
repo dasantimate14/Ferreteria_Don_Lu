@@ -101,7 +101,7 @@
                 } catch (Exception e) {
               %>
               <tr>
-                <td colspan="4" style="color: red; text-align: center">
+                <td colspan="4" class="text-red text-center">
                   Error: <%= e.getMessage() %>
                 </td>
               </tr>

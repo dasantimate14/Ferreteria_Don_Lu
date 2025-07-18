@@ -51,35 +51,9 @@ if ("POST".equalsIgnoreCase(request.getMethod())) {
 <head>
     <meta charset="UTF-8" />
     <title>Registrar Cliente</title>
-    <link rel="stylesheet" href="css/formulario.css" />
+    <link rel="stylesheet" href="css/styles.css" />
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet" />
-    <style>
-        .mensaje-exito {
-            background-color: #e0ffe0;
-            border: 2px solid #2ecc71;
-            color: #2ecc71;
-            padding: 10px;
-            font-weight: bold;
-            text-align: center;
-            margin-bottom: 15px;
-            border-radius: 8px;
-        }
-        .mensaje-error {
-            background-color: #ffe0e0;
-            border: 2px solid #e74c3c;
-            color: #e74c3c;
-            padding: 10px;
-            font-weight: bold;
-            text-align: center;
-            margin-bottom: 15px;
-            border-radius: 8px;
-        }
-        .cliente-id {
-            font-size: 1.3em;
-            color: #2980b9;
-            margin-top: 5px;
-        }
-    </style>
+    
 </head>
 <body>
     <!-- Header -->
@@ -150,60 +124,7 @@ if ("POST".equalsIgnoreCase(request.getMethod())) {
         </section>
     </div>
     <!-- Tabla de Clientes Actuales -->
-<style>
-.tabla-clientes-section {
-    margin: 48px auto 30px auto;
-    max-width: 1050px;
-    background: #fff;
-    border-radius: 14px;
-    box-shadow: 0 2px 12px rgba(44,62,80,0.12);
-    padding: 22px 15px 26px 15px;
-}
-.tabla-clientes-section h2 {
-    color: #283e62;
-    text-align: center;
-    font-size: 1.4em;
-    margin-bottom: 16px;
-}
-.table-clientes-container {
-    overflow-x: auto;
-}
-.tabla-clientes {
-    width: 100%;
-    border-collapse: collapse;
-    font-family: 'Segoe UI', Arial, sans-serif;
-    background: #fafcff;
-}
-.tabla-clientes th, .tabla-clientes td {
-    padding: 10px 13px;
-    text-align: center;
-}
-.tabla-clientes th {
-    background: #2286cf;
-    color: #fff;
-    font-weight: 600;
-    font-size: 1.06em;
-}
-.tabla-clientes tr {
-    border-bottom: 1px solid #e3e3f3;
-    transition: background 0.17s;
-}
-.tabla-clientes tr:hover {
-    background: #e4f1fb;
-}
-.tabla-clientes td {
-    color: #223;
-}
-@media (max-width: 700px) {
-    .tabla-clientes-section {
-        padding: 10px 2vw;
-    }
-    .tabla-clientes th, .tabla-clientes td {
-        font-size: 0.97em;
-        padding: 7px 2px;
-    }
-}
-</style>
+
 
 	<section class="tabla-clientes-section">
 	    <h2>Clientes Registrados</h2>
@@ -248,7 +169,7 @@ if ("POST".equalsIgnoreCase(request.getMethod())) {
 	            } catch (Exception e) {
 	            %>
 	                <tr>
-	                    <td colspan="6" style="color:red;">Error al cargar clientes: <%= e.getMessage() %></td>
+                            <td colspan="6" class="text-red">Error al cargar clientes: <%= e.getMessage() %></td>
 	                </tr>
 	            <%
 	            } finally {

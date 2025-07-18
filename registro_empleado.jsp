@@ -74,7 +74,7 @@ if ("POST".equalsIgnoreCase(request.getMethod())) {
 <head>
     <meta charset="UTF-8">
     <title>Gestión de Empleados</title>
-    <link rel="stylesheet" href="css/formulario.css" />
+    <link rel="stylesheet" href="css/styles.css" />
     <link rel="stylesheet" href="css/tabla.css" />
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
 </head>
@@ -106,7 +106,7 @@ if ("POST".equalsIgnoreCase(request.getMethod())) {
 <main class="container">
 	<!-- Tabla de empleados -->
 	<section class="tabla-empleados-section">
-	    <h2 style="text-align:center;">Lista de Empleados</h2>
+            <h2 class="text-center">Lista de Empleados</h2>
 	    <div class="table-container">
 	    <table class="modern-table">
 	        <thead>
@@ -150,7 +150,7 @@ if ("POST".equalsIgnoreCase(request.getMethod())) {
 	            } catch (Exception e) {
 	        %>
 	            <tr>
-	                <td colspan="9" style="color: red;">Error al cargar empleados: <%= e.getMessage() %></td>
+                        <td colspan="9" class="text-red">Error al cargar empleados: <%= e.getMessage() %></td>
 	            </tr>
 	        <%
 	            } finally {
@@ -253,7 +253,7 @@ if ("POST".equalsIgnoreCase(request.getMethod())) {
             </form>
         </section>
 
-        <p style="margin-top: 20px; color: <%= mensaje.startsWith("✓") ? "green" : "red" %>;">
+        <p class="mt-20 <%= mensaje.startsWith("✓") ? "text-green" : "text-red" %>">
             <%= mensaje %>
         </p>
     </div>

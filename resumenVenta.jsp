@@ -59,7 +59,7 @@
   <section class="table-section">
     <div class="table-header">
       <h2><%= tituloTabla %></h2>
-      <section style="display: flex; gap: 20px; justify-content: space-between; margin-top: 30px;">
+      <section class="metrics-flex">
 <%
   int totalTransacciones = 0;
   double totalVentas = 0.0;
@@ -88,22 +88,22 @@
 
     conn.close();
   } catch (Exception e) {
-    out.println("<p style='color:red;'>Error al cargar indicadores: " + e.getMessage() + "</p>");
+    out.println("<p class='text-red'>Error al cargar indicadores: " + e.getMessage() + "</p>");
   }
 %>
-        <div class="notification" style="flex: 1;">
+        <div class="notification flex-1">
           <div class="notification-content">
             <div class="notification-title">Transacciones</div>
             <div class="notification-text">Cantidad total: <strong><%= totalTransacciones %></strong></div>
           </div>
         </div>
-        <div class="notification" style="flex: 1;">
+        <div class="notification flex-1">
           <div class="notification-content">
             <div class="notification-title">Ventas Totales</div>
             <div class="notification-text">Monto acumulado: <strong>$<%= String.format("%.2f", totalVentas) %></strong></div>
           </div>
         </div>
-        <div class="notification" style="flex: 1;">
+        <div class="notification flex-1">
           <div class="notification-content">
             <div class="notification-title">Producto Más Vendido</div>
             <div class="notification-text">Nombre: <strong><%= productoMasVendido %></strong></div>
@@ -152,7 +152,7 @@
     }
     conn.close();
   } catch (Exception e) {
-    out.println("<tr><td colspan='4' style='color:red;'>Error al cargar datos: " + e.getMessage() + "</td></tr>");
+    out.println("<tr><td colspan='4' class='text-red'>Error al cargar datos: " + e.getMessage() + "</td></tr>");
   }
 %>
         </tbody>

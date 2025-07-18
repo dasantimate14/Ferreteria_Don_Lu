@@ -5,7 +5,7 @@
 <head>
     <meta charset="UTF-8">
     <title>Solicitud de Reabastecimiento</title>
-    <link rel="stylesheet" href="css/solicitar_reabastecimiento.css">
+    <link rel="stylesheet" href="css/styles.css">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
 </head>
 <body>
@@ -239,7 +239,7 @@ if (request.getMethod().equalsIgnoreCase("post")) {
 }
 if (mensaje != null) {
 %>
-    <div style="margin-top:20px;color:<%=mensaje.startsWith("Error")?"red":"green"%>">
+    <div class="mt-20 <%= mensaje.startsWith("Error")?"mensaje-error":"mensaje-exito" %>">
         <%= mensaje %>
     </div>
 <% } %>

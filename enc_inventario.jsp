@@ -216,7 +216,7 @@
 		          <td><%= cantidadPend %></td>
 		          <td><%= fechaFmt %></td>
 		          <td>
-		            <form action="recibir_pedido.jsp" method="post" style="display:inline;">
+                            <form action="recibir_pedido.jsp" method="post" class="d-inline">
 		              <input type="hidden" name="pedido_id"       value="<%= idPedido     %>" />
 		              <input type="hidden" name="proveedor_id"    value="<%= proveedorId  %>" />
 		              <input type="hidden" name="inventario_id"   value="<%= invId        %>" />
@@ -438,7 +438,7 @@
    </div>
    
        <!-- Botón para ver el Historial del Inventario y Agregar Proveedor-->
-    <div style="text-align:center; margin: 2rem 0;">
+    <div class="centered-section">
       <form action="historial_inventario.jsp" method="get">
         <button type="submit" class="btn-primary">Historial del Inventario</button>
       </form>
