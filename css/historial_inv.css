@@ -1,0 +1,333 @@
+/* CSS Complementario para historial.jsp */
+
+/* Header específico para historial */
+header {
+  background: white;
+  padding: 25px 30px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  margin-bottom: 30px;
+  border-radius: 12px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1200px;
+  margin: 0 auto 30px auto;
+}
+
+header h1 {
+  font-size: 28px;
+  font-weight: 700;
+  color: #2c3e50;
+  margin: 0;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+header h1::before {
+  content: "📋";
+  font-size: 24px;
+}
+
+/* Botón de volver */
+.btn-secondary {
+  background: linear-gradient(135deg, #6c757d 0%, #5a6268 100%);
+  color: white;
+  text-decoration: none;
+  padding: 12px 24px;
+  border-radius: 8px;
+  font-weight: 600;
+  font-size: 14px;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  transition: all 0.3s ease;
+  border: none;
+  cursor: pointer;
+  box-shadow: 0 2px 8px rgba(108, 117, 125, 0.3);
+}
+
+.btn-secondary:hover {
+  background: linear-gradient(135deg, #5a6268 0%, #495057 100%);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(108, 117, 125, 0.4);
+}
+
+/* Secciones del historial */
+section {
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+  overflow: hidden;
+  margin-bottom: 30px;
+  max-width: 1200px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 30px;
+}
+
+section h2 {
+  background: linear-gradient(135deg, #2c3e50 0%, #34495e 100%);
+  color: white;
+  padding: 20px 30px;
+  margin: 0;
+  font-size: 20px;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  border-bottom: 3px solid #1a252f;
+}
+
+/* Iconos específicos para cada sección */
+section:nth-child(2) h2::before {
+  content: "📈";
+  font-size: 18px;
+}
+
+section:nth-child(3) h2::before {
+  content: "📉";
+  font-size: 18px;
+}
+
+section:nth-child(4) h2::before {
+  content: "📊";
+  font-size: 18px;
+}
+
+/* Estilos específicos para las tablas del historial */
+.modern-table tbody tr:hover {
+  background-color: #f8f9fa;
+  transform: translateY(-1px);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Estilos específicos para las columnas del historial */
+.modern-table td:first-child {
+  font-family: "Courier New", monospace;
+  font-weight: 600;
+  color: #495057;
+  font-size: 13px;
+  min-width: 130px;
+}
+
+.modern-table td:nth-child(2) {
+  font-weight: 600;
+  color: #2c3e50;
+  min-width: 150px;
+}
+
+.modern-table td:nth-child(3) {
+  text-align: center;
+  font-weight: 600;
+}
+
+/* Badges para tipos de movimiento */
+.tipo-ingreso {
+  background: linear-gradient(135deg, #d4edda 0%, #c3e6cb 100%);
+  color: #155724;
+  padding: 6px 12px;
+  border-radius: 20px;
+  font-size: 12px;
+  font-weight: 600;
+  display: inline-block;
+  border: 1px solid #c3e6cb;
+}
+
+.tipo-salida {
+  background: linear-gradient(135deg, #f8d7da 0%, #f5c6cb 100%);
+  color: #721c24;
+  padding: 6px 12px;
+  border-radius: 20px;
+  font-size: 12px;
+  font-weight: 600;
+  display: inline-block;
+  border: 1px solid #f5c6cb;
+}
+
+/* Estilos para cantidades */
+.cantidad-positiva {
+  color: #28a745;
+  font-weight: 700;
+}
+
+.cantidad-negativa {
+  color: #dc3545;
+  font-weight: 700;
+}
+
+/* Estilos para precios */
+.precio-cell {
+  font-family: "Courier New", monospace;
+  font-weight: 600;
+  color: #28a745;
+  text-align: right;
+  font-size: 14px;
+}
+
+/* Estilos para referencias */
+.referencia-cell {
+  font-family: "Courier New", monospace;
+  font-size: 12px;
+  color: #6c757d;
+  background-color: #f8f9fa;
+  padding: 4px 8px;
+  border-radius: 4px;
+  display: inline-block;
+}
+
+/* Sección de error */
+.error-section {
+  background: linear-gradient(135deg, #f8d7da 0%, #f5c6cb 100%);
+  border: 1px solid #f5c6cb;
+  border-radius: 12px;
+  padding: 20px;
+  margin: 20px auto;
+  max-width: 1200px;
+  text-align: center;
+}
+
+.error-section p {
+  margin: 0;
+  font-weight: 600;
+  font-size: 16px;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+  header {
+    flex-direction: column;
+    gap: 15px;
+    padding: 20px;
+    text-align: center;
+  }
+  
+  header h1 {
+    font-size: 24px;
+  }
+  
+  section {
+    margin: 0 10px 20px 10px;
+    border-radius: 8px;
+  }
+  
+  section h2 {
+    padding: 15px 20px;
+    font-size: 18px;
+  }
+  
+  .modern-table {
+    font-size: 12px;
+  }
+  
+  .modern-table th,
+  .modern-table td {
+    padding: 10px 8px;
+  }
+  
+  .table-container {
+    margin: 0 -10px;
+  }
+}
+
+/* Animaciones suaves */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+section {
+  animation: fadeInUp 0.6s ease-out;
+}
+
+section:nth-child(2) {
+  animation-delay: 0.1s;
+}
+
+section:nth-child(3) {
+  animation-delay: 0.2s;
+}
+
+section:nth-child(4) {
+  animation-delay: 0.3s;
+}
+
+/* Mejoras en la accesibilidad */
+.modern-table th {
+  position: relative;
+}
+
+.modern-table th:focus {
+  outline: 2px solid #007bff;
+  outline-offset: 2px;
+}
+
+.modern-table tbody tr:focus-within {
+  background-color: #e3f2fd;
+  outline: 2px solid #007bff;
+  outline-offset: -2px;
+}
+
+/* Indicadores de carga */
+.loading-placeholder {
+  text-align: center;
+  padding: 40px;
+  color: #6c757d;
+  font-style: italic;
+}
+
+/* Estilos para tablas vacías */
+.empty-table {
+  text-align: center;
+  padding: 40px;
+  color: #6c757d;
+  font-style: italic;
+  background-color: #f8f9fa;
+}
+
+.empty-table::before {
+  content: "📭";
+  font-size: 48px;
+  display: block;
+  margin-bottom: 15px;
+}
+
+/* Tooltips para información adicional */
+.tooltip {
+  position: relative;
+  cursor: help;
+}
+
+.tooltip:hover::after {
+  content: attr(data-tooltip);
+  position: absolute;
+  bottom: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  background: #333;
+  color: white;
+  padding: 8px 12px;
+  border-radius: 4px;
+  font-size: 12px;
+  white-space: nowrap;
+  z-index: 1000;
+  opacity: 0;
+  animation: fadeIn 0.3s ease-out forwards;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateX(-50%) translateY(5px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(-50%) translateY(0);
+  }
+}

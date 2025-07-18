@@ -1,5 +1,5 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-pageEncoding="UTF-8"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@ page import="java.sql.*" %>
 <!DOCTYPE html>
 <html lang="es">
   <head>
@@ -9,33 +9,28 @@ pageEncoding="UTF-8"%>
     <link rel="stylesheet" href="css/tabla.css" />
   </head>
   <body>
-    <!-- Seccion del header -->
+    <!-- Sección del header -->
     <header>
       <div class="header-banner">
         <div class="header-logo-container">
           <div class="header-Logo">
             <img src="img/Logo.png" alt="logo" />
           </div>
-          <h1 class="site-name">Ferreteria Don Lu</h1>
+          <h1 class="site-name">Ferretería Don Lu</h1>
         </div>
         <div class="group-icons">
-          <a href="https://www.google.com/"
-            ><i class="fa-solid fa-magnifying-glass icons"></i
-          ></a>
+          <a href="#"><i class="fa-solid fa-magnifying-glass icons"></i></a>
           <i class="fa-brands fa-facebook icons"></i>
           <i class="fa-brands fa-instagram icons"></i>
           <i class="fa-brands fa-youtube icons"></i>
-          <a href="login.jsp"
-            ><i class="fa-solid fa-right-to-bracket icon-login"></i
-          ></a>
+          <a href="login.jsp"><i class="fa-solid fa-right-to-bracket icon-login"></i></a>
         </div>
       </div>
       <nav class="main-nav">
         <ul>
-          <li><a href="main_cajero.jsp">Inicio</a></li>
-          <li><a href="POS.jsp">Registrar venta</a></li>
-          <li><a href="registro_cliente.jsp">Registrar clientes</a></li>
-          <li><a href="Inventario.jsp">Inventario</a></li>
+                <li><a href="pos.jsp">Registrar venta</a></li>
+                <li><a href="registroCliente.jsp">Registrar clientes</a></li>
+                <li><a href="inventario.jsp">Inventario</a></li>
         </ul>
       </nav>
     </header>
@@ -51,41 +46,59 @@ pageEncoding="UTF-8"%>
             <thead>
               <tr>
                 <th>ID</th>
-                <th>ID Producto</th>
+                <th>Producto</th>
+                <th>Categoría</th>
                 <th>Cantidad Disponible</th>
               </tr>
             </thead>
             <tbody>
-              <% try { Class.forName("oracle.jdbc.driver.OracleDriver");
-              Connection conn =
-              DriverManager.getConnection("jdbc:oracle:thin:@localhost:1521/XEPDB1",
-              "system", "oracle"); Statement stmt = conn.createStatement();
-              ResultSet rs = stmt.executeQuery("SELECT * FROM Inventario");
-              while (rs.next()) { int id = rs.getInt("inv_id"); int producto =
-              rs.getInt("inv_producto"); int cantidad =
-              rs.getInt("inv_cantidad_disp"); // Definir clase CSS según
-              cantidad String cantidadClass; if (cantidad == 0) { cantidadClass
-              = "quantity-empty"; } else if (cantidad < 10) { cantidadClass =
-              "quantity-low"; } else if (cantidad < 50) { cantidadClass =
-              "quantity-medium"; } else { cantidadClass = "quantity-high"; } %>
+              <%
+                try {
+                    Class.forName("oracle.jdbc.OracleDriver");
+
+                    String dbURL  = "jdbc:oracle:thin:@localhost:1521:XE";
+                    String dbUser = "owner_ferreteria";
+                    String dbPass = "1234567"; 
+
+                    Connection conn = DriverManager.getConnection(dbURL, dbUser, dbPass);
+                    String sql = "SELECT * FROM VISTA_INV_DETALLADO_CAJA";
+                    PreparedStatement ps = conn.prepareStatement(sql);
+                    ResultSet rs = ps.executeQuery();
+
+                    while (rs.next()) {
+                        int id = rs.getInt("inv_id");
+                        String producto = rs.getString("pro_nombre");
+                        String categoria = rs.getString("cat_nombre");
+                        int cantidad = rs.getInt("inv_cantidad_disp");
+
+                        String cantidadClass;
+                        if (cantidad == 0) {
+                            cantidadClass = "quantity-empty";
+                        } else if (cantidad < 10) {
+                            cantidadClass = "quantity-low";
+                        } else if (cantidad < 50) {
+                            cantidadClass = "quantity-medium";
+                        } else {
+                            cantidadClass = "quantity-high";
+                        }
+              %>
               <tr>
                 <td class="id-cell"><%= id %></td>
-                <td class="product-cell">
-                  <div class="product-info">
-                    <span class="product-name">Producto #<%= producto %></span>
-                    <span class="product-code">Código: <%= producto %></span>
-                  </div>
-                </td>
+                <td class="product-cell"><%= producto %></td>
+                <td class="category-cell"><%= categoria %></td>
                 <td class="quantity-cell">
-                  <span class="quantity-badge <%= cantidadClass %>"
-                    ><%= cantidad %></span
-                  >
+                  <span class="quantity-badge <%= cantidadClass %>"><%= cantidad %></span>
                 </td>
               </tr>
-              <% } rs.close(); stmt.close(); conn.close(); } catch (Exception e)
-              { %>
+              <%
+                    }
+                    rs.close();
+                    ps.close();
+                    conn.close();
+                } catch (Exception e) {
+              %>
               <tr>
-                <td colspan="3" style="color: red; text-align: center">
+                <td colspan="4" style="color: red; text-align: center">
                   Error: <%= e.getMessage() %>
                 </td>
               </tr>
@@ -96,14 +109,12 @@ pageEncoding="UTF-8"%>
       </section>
     </div>
 
-    <!-- Seccion del Footer -->
+    <!-- Sección del Footer -->
     <footer>
       <div class="copyright">
-        <p>&copy; Ferreteria Don Lu. Todos los derechos reservados.</p>
+        <p>&copy; Ferretería Don Lu. Todos los derechos reservados.</p>
         <div class="div-logout">
-          <a href="login.jsp"
-            ><i class="fa-solid fa-right-to-bracket icon-login"></i
-          ></a>
+          <a href="login.jsp"><i class="fa-solid fa-right-to-bracket icon-login"></i></a>
         </div>
         <nav>
           <a href="main_cajero.jsp">Inicio</a> |
