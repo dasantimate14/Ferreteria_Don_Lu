@@ -341,3 +341,94 @@ footer nav a {
   flex-wrap: wrap;
   gap: 10px;
 }
+
+/* === FORMULARIOS GENERALES === */
+form {
+  max-width: 500px;
+  margin: auto;
+}
+label {
+  display: block;
+  margin-top: 1em;
+}
+input,
+textarea {
+  width: 100%;
+}
+.ejemplo {
+  color: #6c757d;
+  font-size: 12px;
+  font-style: italic;
+}
+.btn-primary {
+  background: linear-gradient(135deg, #4caf50 0%, #45a049 100%);
+  color: #fff;
+  padding: 0.75rem 1.5rem;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  margin-top: 1.5rem;
+}
+.btn-primary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(76, 175, 80, 0.3);
+}
+.btn-primary:active {
+  transform: translateY(0);
+}
+
+/* === MENSAJES === */
+.mensaje {
+  text-align: center;
+  margin-top: 2em;
+  font-weight: bold;
+}
+.mensaje-error {
+  background-color: #ffe0e0;
+  border: 2px solid #e74c3c;
+  color: #e74c3c;
+  padding: 10px;
+  border-radius: 8px;
+}
+.mensaje-exito {
+  background-color: #e0ffe0;
+  border: 2px solid #2ecc71;
+  color: #2ecc71;
+  padding: 10px;
+  border-radius: 8px;
+}
+.cliente-id {
+  font-size: 1.3em;
+  color: #2980b9;
+  margin-top: 5px;
+}
+
+/* === UTILIDADES === */
+.text-center {
+  text-align: center;
+}
+.text-red {
+  color: red;
+}
+.text-green {
+  color: green;
+}
+.d-inline {
+  display: inline;
+}
+.mt-20 {
+  margin-top: 20px;
+}
+.centered-section {
+  text-align: center;
+  margin: 2rem 0;
+}
+.flex-1 {
+  flex: 1;
+}
+.metrics-flex {
+  display: flex;
+  gap: 20px;
+  justify-content: space-between;
+  margin-top: 30px;
+}

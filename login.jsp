@@ -87,7 +87,7 @@
                 <h2>Ferretería Don Lu</h2>
 
                 <% if (!mensajeError.isEmpty()) { %>
-                    <p style="color:red;"><%= mensajeError %></p>
+                    <p class="mensaje-error"><%= mensajeError %></p>
                 <% } %>
 
                 <form method="POST">

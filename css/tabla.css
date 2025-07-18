@@ -313,3 +313,72 @@ footer nav a {
   gap: 10px;
 }
 
+/* === TABLAS DE CLIENTES Y PROVEEDORES === */
+.tabla-clientes-section,
+.tabla-proveedores-section {
+  margin: 48px auto 30px auto;
+  max-width: 1100px;
+  background: #fff;
+  border-radius: 14px;
+  box-shadow: 0 2px 14px rgba(44, 62, 80, 0.1);
+  padding: 25px 15px;
+}
+.tabla-clientes-section h2,
+.tabla-proveedores-section h2 {
+  text-align: center;
+  margin-bottom: 20px;
+  font-size: 1.5em;
+  color: #2d4379;
+}
+.table-clientes-container,
+.table-proveedores-container {
+  overflow-x: auto;
+}
+.tabla-clientes,
+.tabla-proveedores {
+  width: 100%;
+  border-collapse: collapse;
+  font-family: 'Segoe UI', Arial, sans-serif;
+  background: #fafcff;
+}
+.tabla-clientes th,
+.tabla-clientes td,
+.tabla-proveedores th,
+.tabla-proveedores td {
+  padding: 10px 14px;
+  text-align: center;
+}
+.tabla-clientes th,
+.tabla-proveedores th {
+  background: #2286cf;
+  color: #fff;
+  font-weight: 600;
+  font-size: 1.06em;
+}
+.tabla-clientes tr,
+.tabla-proveedores tr {
+  border-bottom: 1px solid #e3e3f3;
+  transition: background 0.17s;
+}
+.tabla-clientes tr:hover,
+.tabla-proveedores tr:hover {
+  background: #e4f1fb;
+}
+.tabla-clientes td,
+.tabla-proveedores td {
+  color: #223;
+}
+@media (max-width: 700px) {
+  .tabla-clientes-section,
+  .tabla-proveedores-section {
+    padding: 10px 2vw;
+  }
+  .tabla-clientes th,
+  .tabla-clientes td,
+  .tabla-proveedores th,
+  .tabla-proveedores td {
+    font-size: 0.97em;
+    padding: 7px 2px;
+  }
+}
+

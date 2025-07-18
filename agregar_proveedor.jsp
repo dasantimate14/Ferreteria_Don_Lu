@@ -5,15 +5,9 @@
 <head>
     <meta charset="UTF-8">
     <title>Agregar Proveedor</title>
-    <link rel="stylesheet" href="css/agregar_proveedor.css" />
+    <link rel="stylesheet" href="css/styles.css" />
+    <link rel="stylesheet" href="css/tabla.css" />
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
-    <style>
-      form { max-width:500px; margin:auto; }
-      label { display:block; margin-top:1em; }
-      input, textarea { width:100%; }
-      .mensaje { text-align:center; margin-top:2em; font-weight:bold; }
-      .ejemplo { color: #444; font-size: 0.95em; margin-top: 0.15em; }
-    </style>
 </head>
 <body>
 
@@ -44,7 +38,7 @@
       </nav>
     </header>
     
-    <h2 style="text-align:center;">Registrar Nuevo Proveedor</h2>
+    <h2 class="text-center">Registrar Nuevo Proveedor</h2>
 
     <form method="post" autocomplete="off">
         <label>Nombre del Proveedor:</label>
@@ -107,67 +101,13 @@
     }
     if (mensaje != null) {
     %>
-      <div class="mensaje" style="color:<%=mensaje.startsWith("Error")?"red":"green"%>;">
+      <div class="mensaje <%= mensaje.startsWith("Error")?"mensaje-error":"mensaje-exito" %>">
         <%= mensaje %>
       </div>
     <%
     }
     %>
     <!-- Tabla de Proveedores Actuales -->
-	<style>
-	.tabla-proveedores-section {
-	    margin: 48px auto 18px auto;
-	    max-width: 1100px;
-	    background: #fff;
-	    border-radius: 14px;
-	    box-shadow: 0 2px 14px rgba(80,100,160,0.10);
-	    padding: 25px 15px;
-	}
-	.tabla-proveedores-section h2 {
-	    color: #2d4379;
-	    text-align: center;
-	    font-size: 1.5em;
-	    margin-bottom: 20px;
-	}
-	.table-proveedores-container {
-	    overflow-x: auto;
-	}
-	.tabla-proveedores {
-	    width: 100%;
-	    border-collapse: collapse;
-	    font-family: 'Segoe UI', Arial, sans-serif;
-	    background: #f9fafd;
-	}
-	.tabla-proveedores th, .tabla-proveedores td {
-	    padding: 10px 14px;
-	    text-align: center;
-	}
-	.tabla-proveedores th {
-	    background: #165ea8;
-	    color: #fff;
-	    font-weight: 600;
-	    font-size: 1.07em;
-	}
-	.tabla-proveedores tr {
-	    border-bottom: 1px solid #e2e2ee;
-	    transition: background 0.16s;
-	}
-	.tabla-proveedores tr:hover {
-	    background: #e7f1fb;
-	}
-	.tabla-proveedores td {
-	    color: #1b1b1b;
-	}
-	@media (max-width: 700px) {
-	    .tabla-proveedores-section {
-	        padding: 10px 2vw;
-	    }
-	    .tabla-proveedores th, .tabla-proveedores td {
-	        font-size: 0.98em;
-	        padding: 6px 2px;
-	    }
-	}
-	</style>
 	
 	<section class="tabla-proveedores-section">
 	    <h2>Proveedores Actuales</h2>
@@ -212,7 +152,7 @@
 	            } catch (Exception e) {
 	            %>
 	                <tr>
-	                    <td colspan="6" style="color:red;">Error al cargar proveedores: <%= e.getMessage() %></td>
+                            <td colspan="6" class="text-red">Error al cargar proveedores: <%= e.getMessage() %></td>
 	                </tr>
 	            <%
 	            } finally {
